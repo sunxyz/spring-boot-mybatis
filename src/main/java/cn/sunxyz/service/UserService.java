@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.github.pagehelper.PageHelper;
+
 import cn.sunxyz.entity.User;
 import cn.sunxyz.mapper.UserMapper;
 
@@ -20,7 +22,9 @@ public class UserService {
 		return userMapper.findById(id);
 	}
 	
+	//使用分页插件
 	public List<User> findAll(){
+		PageHelper.startPage(1, 2);
 		return userMapper.fingAll();
 	}
 	

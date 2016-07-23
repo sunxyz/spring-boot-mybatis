@@ -2,3 +2,22 @@ spring:
 #  多环境配置  
   profiles:
     active: dev
+
+
+#模板   
+  thymeleaf:
+    cache: true  
+# Check that the templates location exists.
+    check-template-location: true  
+# Content-Type value.
+    content-type: text/html  
+# Enable MVC Thymeleaf view resolution.
+    enabled: true  
+# Template encoding.
+    encoding: UTF-8  
+# Comma-separated list of view names that should be excluded from resolution.
+    mode: HTML5  
+# Prefix that gets prepended to view names when building a URL.
+    prefix: classpath:/templates/  
+# Suffix that gets appended to view names when building a URL.
+    suffix: .html

@@ -5,3 +5,31 @@ spring:
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     platform: mysql
+#druid参考官方配置
+    initial-size: 1
+    max-active: 20
+    max-idle: 30
+    min-idle: 5
+    max-wait: 60000
+#配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    time-between-eviction-runs-millis: 60000
+#配置一个连接在池中最小生存的时间，单位是毫秒
+    min-evictable-idle-time-millis: 300000
+    validation-query: SELECT 'x'
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    pool-prepared-statements: false
+    max-open-prepared-statements: 20
+#配置监控统计拦截的filters
+    filters: stat
+ 
+ 
+ ##日志
+logging:
+  level:
+    org:
+      apache:
+        velocity: DEBUG
+  path: /logs
+  file: myapp.log
